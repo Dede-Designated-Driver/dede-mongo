@@ -20,7 +20,7 @@ const mongoose = require('mongoose')
 const debug = require('debug')('mongoose');
 
 // enable logging collection methods + arguments to the console/file
-if (process.env.MONGOOSE_DEBUG !== 'true') {
+if (process.env.MONGOOSE_DEBUG === 'true') {
     debug('debugging enabled')
     mongoose.set('debug',true)
 }else{

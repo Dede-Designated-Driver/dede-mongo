@@ -21,7 +21,7 @@ const mongoose = require('./connect')
 const Vehicle=require('./models/vehicle.js')
 
 // enable logging collection methods + arguments to the console/file
-if(process.env.MONGOOSE_DEBUGGING == 'true') {
+if(process.env.MONGOOSE_DEBUG == 'true') {
     mongoose.set('debug',true)
 }else{
     mongoose.set('debug',false)

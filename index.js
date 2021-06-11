@@ -20,6 +20,13 @@ const debug=require('debug')('dede-mongo')
 const mongoose = require('./connect')
 const Vehicle=require('./models/vehicle.js')
 
+// enable logging collection methods + arguments to the console/file
+if(process.env.MONGOOSE_DEBUGGING == 'true') {
+    mongoose.set('debug',true)
+}else{
+    mongoose.set('debug',false)
+}
+
 const db=mongoose.connection
 db.once('open', _ => {
     debug('Database connected')

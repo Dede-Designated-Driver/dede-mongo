@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 require('dotenv').config();
 const debug=require('debug')('dede-mongo')
 const mongoose = require('./connect')
-const Vehicle=require('./models/vehicle.js')
+const Obc=require('./models/on-board-computer.js')
 
 // enable logging collection methods + arguments to the console/file
 if(process.env.MONGOOSE_DEBUG == 'true') {
@@ -36,25 +36,19 @@ db.on('error', err => {
 })
 
 //create model instance also known as document
-const agencyFoo=new Vehicle(
+const obcFoo=new Obc(
     {
 	uuid:'uuid',
 	lat:39,
 	lon:-79,
 	ts:0,
-	alias:'alias',
-	label:'label',
-	tripId:'trip_id',
-	routeId:'route_id',
-	directionId:'direction_id',
-	startTime:'start_time',
-	startDate:'start_date'
+	alias:'alias'
     }
 )
 
-debug('agencyFoo created')
+debug('obcFoo created')
 
-agencyFoo.save(function (err) {
+obcFoo.save(function (err) {
     if(err){
 	return handleError(err);
     }else{
@@ -62,9 +56,9 @@ agencyFoo.save(function (err) {
     }
 });
 
-debug('agencyFoo saved')
+debug('obcFoo saved')
 
-agencyFoo.updateOne(
+obcFoo.updateOne(
     {ts:0},
     {alias:"ABCD"},
     function (err, docs) { 
@@ -77,4 +71,20 @@ agencyFoo.updateOne(
     }
 ); 
 
-debug('agencyFoo updated')
+debug('obcFoo updated')
+
+/*db.collection.updateOne(filter, update, options)*/
+obcFoo.updateOne({uuid:'uuid'},
+		 {$set:
+		  {lat:53.4,lon:11.2,ts:1,alias:"ABCDE"}
+		 },
+		 function (err, docs) {
+		     if (err){
+			 console.log(err)
+		     }else{
+			 console.log("Updated Docs : ", docs);
+		     }
+		 }
+); 
+
+debug('obcFoo updated')

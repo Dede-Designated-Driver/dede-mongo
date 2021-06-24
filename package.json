@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "dev-obc": "nodemon obc.js",
+    "start-obc": "node obc.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Stefan Begerad",

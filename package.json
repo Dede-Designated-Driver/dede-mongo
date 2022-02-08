@@ -1,7 +1,7 @@
 {
   "name": "dede-mongo",
   "version": "0.0.1",
-  "description": "access mongo data base for Dede real-time map",
+  "description": "access mongo data base for Dede real-time",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

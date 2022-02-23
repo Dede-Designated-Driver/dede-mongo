@@ -1,6 +1,6 @@
 {
   "name": "dede-mongo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "access mongo data base for Dede real-time",
   "main": "index.js",
   "scripts": {

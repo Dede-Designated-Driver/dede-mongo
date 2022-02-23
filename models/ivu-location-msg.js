@@ -4,7 +4,8 @@ const Schema=Mongoose.Schema
 //create Schema for IVU location message
 const ivuLocationMsgSchema=new Schema({
     //Entity
-    String date:String,
+    tgaTs:String,
+    date:String,
     time:String,
     logLevel:String,
     addressPartA:String,

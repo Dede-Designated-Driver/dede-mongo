@@ -16,9 +16,11 @@ const ivuLocationMsgSchema=new Schema({
     //Communication
     //Header
     //Sender
-    sender:String,
+    senderType:String,
+    senderId:String,
     //Receiver
-    receiver:String,
+    receiverType:String,
+    receiverId:String,
     //Telegram
     //TelegramHdr
     teleType:String,
@@ -43,7 +45,7 @@ const ivuLocationMsgSchema=new Schema({
     deviation:String,
     loadDegree:String,
     destinationNo:String,
-    tripType
+    tripType:String
 })
 
 //compile a Schema into a Model

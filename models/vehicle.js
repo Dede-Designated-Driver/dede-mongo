@@ -15,7 +15,7 @@ const vehicleSchema=new Schema({
     routeId:String,
     directionId:String,
     startTime:String,
-    startDame:String
+    startDate:String
 })
 
 //compile a Schema into a Model
